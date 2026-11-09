@@ -1,0 +1,177 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * LUXE — premium hair brand design system.
+ * Dark cinematic base, warm gold accents, beige gradients.
+ */
+
+@font-face { font-display: swap; }
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-beige: var(--beige);
+  --color-ink: var(--ink);
+}
+
+:root {
+  --radius: 0.875rem;
+  /* LUXE dark cinematic palette */
+  --background: oklch(0.14 0.012 60);
+  --foreground: oklch(0.96 0.012 80);
+  --ink: oklch(0.10 0.010 60);
+  --card: oklch(0.18 0.014 60);
+  --card-foreground: oklch(0.96 0.012 80);
+  --popover: oklch(0.18 0.014 60);
+  --popover-foreground: oklch(0.96 0.012 80);
+  --primary: oklch(0.78 0.13 78);
+  --primary-foreground: oklch(0.14 0.012 60);
+  --gold: oklch(0.80 0.14 82);
+  --gold-soft: oklch(0.86 0.09 85);
+  --beige: oklch(0.92 0.04 85);
+  --secondary: oklch(0.24 0.014 60);
+  --secondary-foreground: oklch(0.96 0.012 80);
+  --muted: oklch(0.22 0.012 60);
+  --muted-foreground: oklch(0.72 0.020 80);
+  --accent: oklch(0.28 0.04 75);
+  --accent-foreground: oklch(0.96 0.012 80);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.98 0.003 80);
+  --border: oklch(0.28 0.014 70 / 60%);
+  --input: oklch(0.24 0.014 60);
+  --ring: oklch(0.78 0.13 78);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.16 0.012 60);
+  --sidebar-foreground: oklch(0.96 0.012 80);
+  --sidebar-primary: oklch(0.78 0.13 78);
+  --sidebar-primary-foreground: oklch(0.14 0.012 60);
+  --sidebar-accent: oklch(0.22 0.014 60);
+  --sidebar-accent-foreground: oklch(0.96 0.012 80);
+  --sidebar-border: oklch(0.28 0.014 70 / 60%);
+  --sidebar-ring: oklch(0.78 0.13 78);
+
+  --gradient-gold: linear-gradient(135deg, oklch(0.86 0.12 85) 0%, oklch(0.72 0.14 70) 60%, oklch(0.58 0.12 55) 100%);
+  --gradient-beige: linear-gradient(180deg, oklch(0.18 0.014 60) 0%, oklch(0.22 0.022 70) 50%, oklch(0.18 0.014 60) 100%);
+  --gradient-hero: radial-gradient(120% 80% at 50% 0%, oklch(0.30 0.05 70 / 0.55) 0%, oklch(0.14 0.012 60 / 0) 60%);
+  --shadow-luxe: 0 30px 60px -30px oklch(0 0 0 / 0.7), 0 0 0 1px oklch(0.78 0.13 78 / 0.10);
+  --shadow-gold-glow: 0 0 40px -10px oklch(0.78 0.13 78 / 0.45);
+}
+
+.dark {
+  --background: oklch(0.10 0.010 60);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    background-image: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-gold { color: var(--color-gold); }
+  .bg-gold { background-color: var(--color-gold); }
+  .border-gold { border-color: var(--color-gold); }
+  .bg-gradient-gold { background-image: var(--gradient-gold); }
+  .bg-gradient-beige { background-image: var(--gradient-beige); }
+  .text-gradient-gold {
+    background-image: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .shadow-luxe { box-shadow: var(--shadow-luxe); }
+  .shadow-gold-glow { box-shadow: var(--shadow-gold-glow); }
+  .glass {
+    background: oklch(0.18 0.014 60 / 0.7);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+  .shimmer {
+    background: linear-gradient(90deg,
+      oklch(0.22 0.012 60) 0%,
+      oklch(0.30 0.020 70) 50%,
+      oklch(0.22 0.012 60) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  @keyframes float-y {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-float { animation: float-y 5s ease-in-out infinite; }
+}
